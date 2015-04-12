@@ -1,0 +1,1116 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1344\cocoasubrtf720
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red88\green88\blue88;\red255\green255\blue255;\red234\green234\blue234;
+\red0\green0\blue0;\red117\green0\blue2;\red247\green247\blue247;\red14\green110\blue109;\red114\green114\blue114;
+\red0\green0\blue255;\red109\green109\blue109;\red213\green233\blue255;\red137\green137\blue137;\red204\green0\blue26;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat4 \clwWidth72520\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl400
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 If you are trying to create a LoadRunner script for a SAP Web Dynpro application, and you are having problems correlating the SAPEVENTQUEUE in your POST request, then this Tech Tip is for you\'85\
+\
+Here is what a typical request might look like:
+\f1 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 \
+\pard\intbl\itap1\pardeftab720\sl320
+\cf6 \
+web_submit_data\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "sap-ext-sid_2"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Action=http://www.example.com:8000/sap/bc/webdynpro/SAP/ERC_A_WORKCENTER/;sap-ext-sid=\{SapExtSid2_120\}"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Method=POST"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "TargetFrame="\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "RecContentType=text/html"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Referer=http://www.example.com:8000/sap/bc/webdynpro/SAP/ERC_A_WORKCENTER/;sap-ext-sid=\{SapExtSid2_98\}"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Snapshot=t18.inf"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Mode=HTML"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ITEMDATA\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Name=SAPEVENTQUEUE"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Value=Custom_ClientInfos~E002Id~E004WD01~E005WindowOpenerExists~E004false~E005ClientURL~E004http~003A~002F~002Fwww.example.com~003A8000~002Fsap~002Fbc~002Fwebdynpro~002FSAP~002FERC_A_WORKCENTER~002F~003Bsap-ext-sid~003DzuUt57Mx_3JozG7pOff~002AEg--U_0j6OHCaCQurUN1Pimp1Q--~E003~E002ClientAction~E004enqueue~E005ResponseData~E004delta~E003~E002~E003~E001TimeTrigger_Trigger~E002Id~E004WDE4~E003~E002ResponseData~E004delta~E005ClientAction~E004submit~E003~E002~E003"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ENDITEM\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Name=sap-charset"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Value=utf-8"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ENDITEM\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Name=_client_url_"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Value="\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 ENDITEM\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 LAST\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cell \lastrow\row
+\pard\pardeftab720\sl400
+
+\f0 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Obviously the 
+\i \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 sap-ext-sid
+\i0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  has already been correlated (this is easy to do with a Correlation Rule), but the SAPEVENTQUEUE also needs to be correlated. This is difficult, as it is constructed dynamically using JavaScript, so the value does not appear directly in any HTML response, and therefore cannot be correlated using a simple web_reg_save_param.\
+Examining the SAPEVENTQUEUE string, there are two repeated patterns; a series of 5 characters like \'93~E005\uc0\u8243 , and a series of 5 characters like \'93~003A\'94 (without the \'93E\'94). Taking an educated guess, we can see that the string\'85\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat3 \clwWidth480\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt \clcbpat4 \clwWidth20180\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl320\qr
+
+\f1 \cf11 \cb12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 1\cell 
+\pard\intbl\itap1\pardeftab720\sl320
+\cf9 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  http~003A~002F~002Fwww.example.com~003A8000~002Fsap~002Fbc~002Fwebdynpro~002FSAP~002FERC_A_WORKCENTER~002F~003Bsap\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 ext\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 -\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 sid~003DzuUt57Mx_3J\cb1 \cell \lastrow\row
+\pard\pardeftab720\sl400
+
+\f0 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'85is an encoding of\'85\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat3 \clwWidth480\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt \clcbpat4 \clwWidth13380\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl320\qr
+
+\f1 \cf11 \cb12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 1\cell 
+\pard\intbl\itap1\pardeftab720\sl320
+\cf9 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 http\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 :\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 //www.example.com:8000/sap/bc/webdynpro/SAP/ERC_A_WORKCENTER/;sap-ext-sid=zuUt57Mx_3J\cf9 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \cell \lastrow\row
+\pard\pardeftab720\sl400
+
+\f0 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \'85which means that\'85\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~003A is :\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~002F is /\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~002F is /\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~003D is =\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~003B is ;\cb1 \
+\pard\pardeftab720\sl400
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 So it looks like SAP has invented their own way of {\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Percent-encoding"}}{\fldrslt \cf14 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 URL Encoding}} values to be POSTed to a Web Dynpro server.\
+But what about the encoded values with an \'93E\'94 at the start? Searching through the source code, we find that these are special \'93event separators\'94\'85\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~E001 is EVENT\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~E002 is SECTION_BEGIN\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~E003 is SECTION_END\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~E004 is KEYVALUE\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~E005 is KEYVALUE_PAIR\cb1 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ~E006 is COLLECTION_ENTRY\cb1 \
+\pard\pardeftab720\sl400
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 As I am unlikely to want to change the separators, here is a simple function that will encode a string using SAP\'92s special version of URL encoding.\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat3 \clwWidth480\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt \clcbpat4 \clwWidth18020\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl320\qr
+
+\f1 \cf11 \cb12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\
+14\
+15\
+16\
+17\
+18\
+19\
+20\
+21\
+22\
+23\
+24\
+25\
+26\
+27\
+28\
+29\
+30\
+31\
+32\
+33\
+34\
+35\
+36\
+37\
+38\
+39\
+40\
+41\
+42\
+43\
+44\
+45\
+46\cell 
+\pard\intbl\itap1\pardeftab720\sl320
+\cf13 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // This function replaces unreserved characters in a string with their encoded values.\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Encoding is in the style of SAP Web Dynpro. E.g. "abd*def" becomes "abc~002Adef".\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Reserved/unreserved characters are according to RFC3986 (http://tools.ietf.org/html/rfc3986)\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // This function returns a pointer to the start of the encoded string (buf).\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Note that buf must be big enough to hold original string plus all converted entities.\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\pard\intbl\itap1\pardeftab720\sl320
+\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  dynpro_encode\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 int\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  len \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  strlen\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 int\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  hex_value\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 3\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ];\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\'a0\
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 if\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  NULL\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 lr_error_message\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Input string is empty."\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 return\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  NULL\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\'a0\
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 for\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 0\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 0\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 <\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 len\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++)\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Check if character is in list of allowed characters.\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // a b c d e f g h i j k l m n o p q r s t u v w x y z\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // 0 1 2 3 4 5 6 7 8 9 - _ . ~\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 if\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 >=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'A'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 <=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'Z'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 >=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'a'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 <=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'z'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 >=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '0'\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 <=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '9'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '-'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '_'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '.'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '~'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\'a0\
+      buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ];\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 else\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 if\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 <\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 32\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 >\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 126\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 lr_error_message\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Input string contains non-printable or non-ASCII character %c at position: %d"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ],\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 return\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  NULL\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 else\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // The unicode value for use in url encoding is the same as the hex value for the ASCII character\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      itoa\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 plain_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ],\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  hex_value\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 16\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '~'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '0'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '0'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  toupper\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 hex_value\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 0\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]);\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  toupper\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 hex_value\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 1\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]);\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\'a0\
+  buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  NULL\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // terminate the string\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 return\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\pard\intbl\itap1\pardeftab720\sl320
+\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \cell \lastrow\row
+\pard\pardeftab720\sl400
+
+\f0 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 And, just for completeness, here is a function that will decode a string.\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat3 \clwWidth480\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx4320
+\clvertalt \clcbpat4 \clwWidth16880\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl320\qr
+
+\f1 \cf11 \cb12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\
+14\
+15\
+16\
+17\
+18\
+19\
+20\
+21\
+22\
+23\
+24\
+25\
+26\
+27\
+28\
+29\
+30\
+31\
+32\
+33\
+34\
+35\
+36\
+37\
+38\
+39\
+40\
+41\
+42\
+43\
+44\
+45\
+46\cell 
+\pard\intbl\itap1\pardeftab720\sl320
+\cf10 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 strncpy \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 dest\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 const\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 source\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  size_t n \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // explicit declaration required\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\'a0\
+\pard\intbl\itap1\pardeftab720\sl320
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // This function replaces encoded characters from with their non-encoded value.\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Decoding is in the style of SAP Web Dynpro. E.g. "abc~002Adef" becomes "abd*def".\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Reserved characters are according to RFC3986 (http://tools.ietf.org/html/rfc3986)\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // This function returns a pointer to the start of the decoded string (buf).\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Note that buf must be big enough to hold the decoded string (always equal to or shorter than the encoded string).\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\pard\intbl\itap1\pardeftab720\sl320
+\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  dynpro_decode\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 *\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 int\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  len \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  strlen\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 int\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 char\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  code\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 3\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ];\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // holds url encoded value e.g. "2F" (/)\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 int\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  hex\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // decimal value of hex code e.g. 47 (0x2F)\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 int\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  rc\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // return code\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\'a0\
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 if\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  NULL\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 lr_error_message\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Input string is empty."\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 return\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  NULL\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\'a0\
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 for\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 0\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 0\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 <\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 len\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ++)\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Only convert entities that do not start with "~E". Do not run off the end of the string.\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 if\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '~'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 1\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 !=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 'E'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ((\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 4\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 <\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  len\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 1\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '0'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 2\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ==\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 '0'\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 isalpha\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 3\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ])\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  isdigit\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 3\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]))\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &&\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+         \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 isalpha\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 4\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ])\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ||\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  isdigit\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 4\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]))\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \
+      \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Get the hex value from the input string\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      code\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 0\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 3\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ];\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      code\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 1\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 4\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ];\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      code\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 3\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  NULL\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // Convert the hex value to the appropriate character, and add it to buf\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      rc \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  sscanf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 code\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "%2x"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 &\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 hex\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 if\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 rc \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 !=\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 1\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 )\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+        \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 lr_error_message\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 (\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 "Invalid hex value: %s"\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ,\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  code\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 );\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  hex\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 +=\cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 4\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 // skip the rest of this encoded value in the input string\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 else\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \{\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+      buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 j\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ]\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 =\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  enc_string\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 [\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 i\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ];\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+    \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+  \cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\'a0\
+  \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 return\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9  buf\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ;\cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \
+\pard\intbl\itap1\pardeftab720\sl320
+\cf5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 \}\cf9 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 \cell \lastrow\row
+}
